@@ -1,15 +1,19 @@
 import React from 'react';
 import {Header} from './components/layout/Header';
-import { Sidebar, Content } from './components/layout/Content';
-
+import { Content } from './components/layout/Content';
+import { ProjectsProvider, SelectedProjectProvider } from './context';
 
 export const App = () => {
-  return (
+return(
+  <SelectedProjectProvider>
+  <ProjectsProvider>
     <div className="App">
       <Header />
       <Content />
     </div>
-  );
+  </ProjectsProvider>
+  </SelectedProjectProvider>
+);
 }
 
 export default App;
