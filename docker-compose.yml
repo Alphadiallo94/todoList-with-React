@@ -1,0 +1,14 @@
+version: '3.1'
+volumes:
+    db-data: {}
+services:
+    db:
+        image: mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: todoist
+        ports:
+            - "4307:4307"
+        volumes:
+            - "/Users/alphadiallo/Desktop/M2_MIAGE/Perso/TodoList/todolist/init.sql:/docker-entrypoint-initdb.d/1.sql"

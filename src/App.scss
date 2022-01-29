@@ -2,14 +2,30 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
 // General Settings
-html {
+html, body{
   width: 100%;
+  height: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 *, *:before, *:after {
     -webkit-box-sizing: inherit;
     box-sizing: inherit;
+}
+
+#root{
+  width:100%;
+  height: 100%;
+}
+
+.leMain{
+  width:100%;
+  height: 100%;
+}
+
+.App{
+  width:100%;
+  height: 100%;
 }
 
 body {
@@ -154,7 +170,7 @@ header {
   transition: height 200ms ease-in;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  height: 44px;
+  height: 5.5%;
   z-index: 400;
   position: fixed;
   top: 0;
@@ -253,11 +269,13 @@ header {
   ============================================ */
 .sidebar {
   @include no-select();
-  width: 266px;
-  height: calc(100vh);
+  width: 30%;
+  //height: calc(100vh);
+  height: 100%;
   padding-top: 74px;
   position: fixed;
   overflow-x: hidden;
+  grid-area: 1/1;
   overflow-y: hidden;
   border-right: $generic-border;
   background-color: #fafafa;
@@ -453,28 +471,35 @@ header {
 /* Main Content
   ============================================ */
 .content {
-  display: grid;
+  //display: grid;
+  width:95%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   grid-template-columns: 1fr auto;
-  max-width: 922px;
+  max-width: 95%;
   margin: auto;
+  height: 100%;
+  border-bottom:solid white 2px;
 }
 
 /* Tasks
   ============================================ */
 .tasks {
-  width: 656px;
+  width: 65%;
+  max-width: 65%;
   background-color: white;
   margin-left: 266px;
   border-right: $generic-border;
-  min-height: calc(100vh);
+  //min-height: calc(100vh);
+  min-height: 100%;
+  height: 100%;
   vertical-align: top;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 80px;
-  padding-bottom: 84px;
+  padding-left: 7%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  grid-area: 1/2;
 
   @include mq('900px') {
     margin-left: 0;
@@ -535,7 +560,7 @@ header {
 .add-task {
   &__overlay {
     background: rgba(102,102,102,0.5);
-    position: absolute;
+    //position: absolute;
     margin: auto;
     top: 0;
     left: 0;
@@ -596,7 +621,7 @@ header {
   }
 
   &__content {
-    width: 100%;
+    width: 30%;
     border: 1px solid #ddd;
     background-color: white !important;
     border-radius: 3px;

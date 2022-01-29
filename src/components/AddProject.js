@@ -9,21 +9,21 @@ export const AddProject = ({ shouldShow = false }) => {
     const [show, setShow] = useState(shouldShow);
     const [projectName, setProjectName] = useState('');
     const projectId = generatePushId();
-    const {setProjects} = useProjectsValue();
+    const { projects ,setProjects} = useProjectsValue();
 
     const addProject = () => {
-       projectName && firebase
-      .firestore()
-      .collection('projects')
-      .add({
-          projectId,
-          name: projectName,
-          userId: 'AlphaDialloCIh7w8DopgV4sItC08qE'
-      }).then(() => {
-          setProjects([]);
-          setProjectName('');
-          setShow(false);
-      })
+    projectName && firebase
+        .firestore()
+        .collection('projects')
+        .add({
+            projectId,
+            name: projectName,
+            userId: 'AlphaDialloCIh7w8DopgV4sItC08qE'
+        }).then(() => {
+            setProjects([...projects]);
+            setProjectName('');
+            setShow(false);
+        })
     };
 
 
@@ -37,7 +37,7 @@ export const AddProject = ({ shouldShow = false }) => {
                     ></input>
                     <button className="add-project__submit" type="button" onClick={() => addProject()}
                     data-testid="add-project-submit">
-                            Add project 
+                            Add project
                     </button>
                     <span className="add-project__cancel"
                     data-testid="hide-project-overlay"
@@ -51,6 +51,7 @@ export const AddProject = ({ shouldShow = false }) => {
             }
                     <span className="add-project__plus"></span>
                     <span className="add-project__text"
+                    aria-label="Add Project"
                     data-testid="add-project__action"
                     onClick={() => setShow(!show)}>+ new Project</span>
 

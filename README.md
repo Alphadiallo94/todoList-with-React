@@ -71,3 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#### Docker Compose up pour lancer le serveur 
+
+### docker exec -it 264011880bffe6ddc4583b6b3a53a6893f852a76a2a7bdb56200be1182481a4b /bin/sh pour se connecter au serveur puis mysql -uroot -proot pour se connecter au serveur sql
